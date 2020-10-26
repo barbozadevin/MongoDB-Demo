@@ -4,14 +4,14 @@ let Student = require("../models/student.model");
 //Get all students
 router.route("/").get((req, res) => {
     Student.find()
-      .then((order) => res.status(200).json(order))
+      .then((student) => res.status(200).json(student))
       .catch((err) => res.status(400).json("Error: " + err));
   });
 
 //Get student by id
   router.route("/:id").get((req, res) => {
     Student.findById(req.params.id)
-      .then((order) => res.status(200).json(order))
+      .then((student) => res.status(200).json(student))
       .catch((err) => res.status(400).json("Error: " + err));
   });
 
